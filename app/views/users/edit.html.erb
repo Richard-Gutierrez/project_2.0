@@ -1,0 +1,47 @@
+
+<style>
+
+body {
+background: url('http://tablet.todayonline.com/sites/default/files/styles/photo_gallery_image_lightbox/public/photos/43_images/23633375.jpg?itok=oqec0eZD');
+}
+
+h1 {
+color: white;
+font-family: 'UnifrakturMaguntia', cursive;
+}
+
+.edit_box {
+
+  margin-top: 360px;
+  margin-left: 220px;
+  width: 400px;
+  margin: center;
+}
+
+</style>
+
+
+
+<div class="edit_box">
+
+<h1>Edit your page, <%= @user.name %>!</h1>
+
+<%= form_for @user do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %>
+
+<%= f.label :email %>
+<%= f.text_field :email, class: 'form-control' %>
+
+<br>
+
+<%= f.submit "Update Profile" %>
+
+<br><br>
+
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: "Are you sure?"} %>
+
+<% end %>
+
+</div>
